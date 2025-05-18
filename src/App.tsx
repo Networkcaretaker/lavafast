@@ -1,15 +1,17 @@
 import './App.css'
+import BubbleAnimation from './components/background';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">
-          React + Vite + Tailwind
-        </h1>
-        <p className="text-gray-600">
-          Your new project is set up and ready to go!
-        </p>
+    <div className="relative w-full min-h-screen">
+      {/* Bubble animation as background */}
+      <div className="fixed inset-0 z-0">
+        <BubbleAnimation />
+      </div>
+      
+      {/* Your main content */}
+      <div className="relative z-10 p-6 flex flex-col items-center">
+        <img src="/logo.png" className="object-contain mx-auto mb-4"></img>
       </div>
     </div>
   );
