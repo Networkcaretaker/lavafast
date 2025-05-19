@@ -1,5 +1,6 @@
 import './App.css'
 import BubbleAnimation from './components/background';
+import BubbleDonut from './components/logo';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       {/* Your main content */}
       <div className="relative z-10 p-6 flex flex-col items-center">
         <img src="/logo.png" className="object-contain mx-auto mb-4"></img>
+        <BubbleDonut />
       </div>
     </div>
   );

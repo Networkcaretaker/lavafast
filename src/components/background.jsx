@@ -20,7 +20,7 @@ export default function BubbleAnimation() {
 
     return {
       id,
-      x: 5 + Math.random() * 90, // Random x position (5-95%)
+      x: 1 + Math.random() * 99, // Random x position (1-99%)
       y: 110 + Math.random() * 20, // Start BELOW the viewport (110-130%)
       size: 5 + Math.random() * 25, // Size between 5-30px
       color: colors[Math.floor(Math.random() * colors.length)],
