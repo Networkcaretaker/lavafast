@@ -1,12 +1,30 @@
 import { useEffect, useState } from 'react';
+import type { ReactElement } from 'react';
 
-export default function BubbleDonut() {
-  const [bubbles, setBubbles] = useState([]);
+// Define interfaces for bubble properties
+interface Bubble {
+  id: number;
+  radius: number;
+  angle: number;
+  size: number;
+  speed: number;
+  color: string;
+  opacity: number;
+  radiusOffset: number;
+}
+
+interface Position {
+  x: number;
+  y: number;
+}
+
+export default function BubbleDonut(): ReactElement {
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
   
   useEffect(() => {
     // Create initial bubbles
-    const initialBubbles = [];
-    const totalBubbles = 200;
+    const initialBubbles: Bubble[] = [];
+    const totalBubbles: number = 100;
     
     for (let i = 0; i < totalBubbles; i++) {
       initialBubbles.push(generateBubble(i));
@@ -18,11 +36,11 @@ export default function BubbleDonut() {
     const interval = setInterval(() => {
       setBubbles(prev => prev.map(bubble => {
         // Update angle position
-        let newAngle = bubble.angle + bubble.speed;
+        let newAngle: number = bubble.angle + bubble.speed;
         if (newAngle >= 360) newAngle -= 360;
         
         // Oscillate radius slightly for floating effect
-        const radiusOffset = Math.sin(Date.now() / 1000 + bubble.id) * 10;
+        const radiusOffset: number = Math.sin(Date.now() / 1000 + bubble.id) * 10;
         
         return {
           ...bubble,
@@ -35,20 +53,20 @@ export default function BubbleDonut() {
     return () => clearInterval(interval);
   }, []);
   
-  const generateBubble = (id) => {
+  const generateBubble = (id: number): Bubble => {
     // Donut parameters
-    const outerRadius = 150;
-    const innerRadius = 100;
+    const outerRadius: number = 50;
+    const innerRadius: number = 44;
     
     // Random radius within donut thickness
-    const radius = innerRadius + Math.random() * (outerRadius - innerRadius);
+    const radius: number = innerRadius + Math.random() * (outerRadius - innerRadius);
     
     // Random angle in degrees
-    const angle = Math.random() * 360;
+    const angle: number = Math.random() * 360;
     
     // Random blue/turquoise shade
-    const blueShade = Math.floor(180 + Math.random() * 75);
-    const turquoiseShade = Math.floor(180 + Math.random() * 75);
+    const blueShade: number = Math.floor(180 + Math.random() * 75);
+    const turquoiseShade: number = Math.floor(180 + Math.random() * 75);
     
     return {
       id,
@@ -62,16 +80,16 @@ export default function BubbleDonut() {
     };
   };
   
-  const calculatePosition = (bubble) => {
-    const angleInRadians = bubble.angle * Math.PI / 180;
-    const effectiveRadius = bubble.radius + bubble.radiusOffset;
-    const x = effectiveRadius * Math.cos(angleInRadians);
-    const y = effectiveRadius * Math.sin(angleInRadians);
+  const calculatePosition = (bubble: Bubble): Position => {
+    const angleInRadians: number = bubble.angle * Math.PI / 180;
+    const effectiveRadius: number = bubble.radius + bubble.radiusOffset;
+    const x: number = effectiveRadius * Math.cos(angleInRadians);
+    const y: number = effectiveRadius * Math.sin(angleInRadians);
     return { x, y };
   };
   
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-gray-900">
+    <div className="flex items-center justify-center w-full h-screen">
       <svg className="w-full h-full max-w-lg max-h-lg" viewBox="-200 -200 400 400">
         {/* Optional: Donut outline for reference */}
         <circle 

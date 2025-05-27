@@ -1,13 +1,27 @@
 import { useState, useEffect } from 'react';
+import type { ReactElement } from 'react';
 
-export default function BubbleAnimation() {
-  const [bubbles, setBubbles] = useState([]);
-  const BUBBLE_COUNT = 30;
+// Define interface for bubble properties
+interface Bubble {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  color: string;
+  opacity: string;
+  speed: number;
+  wobble: number;
+  wobbleSpeed: number;
+}
+
+export default function BubbleAnimation(): ReactElement {
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
+  const BUBBLE_COUNT: number = 50;
 
   // Create a new bubble with consistent parameters
-  const createBubble = (id) => {
+  const createBubble = (id: number): Bubble => {
     // Enhanced color palette
-    const colors = [
+    const colors: string[] = [
       'bg-blue-400', // Medium blue
       'bg-blue-500', // Blue
       'bg-cyan-400', // Turquoise
@@ -16,13 +30,13 @@ export default function BubbleAnimation() {
       'bg-white', // White
     ];
 
-    const opacity = ['opacity-20', 'opacity-30', 'opacity-40', 'opacity-50'];
+    const opacity: string[] = ['opacity-20', 'opacity-30', 'opacity-40', 'opacity-50'];
 
     return {
       id,
       x: 1 + Math.random() * 99, // Random x position (1-99%)
       y: 110 + Math.random() * 20, // Start BELOW the viewport (110-130%)
-      size: 5 + Math.random() * 25, // Size between 5-30px
+      size: 10 + Math.random() * 100, // Size between 5-30px
       color: colors[Math.floor(Math.random() * colors.length)],
       opacity: opacity[Math.floor(Math.random() * opacity.length)],
       speed: 0.2 + Math.random() * 0.3, // Speed between 0.2-0.5
@@ -33,7 +47,7 @@ export default function BubbleAnimation() {
 
   useEffect(() => {
     // Initialize bubbles
-    const initialBubbles = [];
+    const initialBubbles: Bubble[] = [];
     for (let i = 0; i < BUBBLE_COUNT; i++) {
       // For initial bubbles, distribute them from bottom to near top
       const newBubble = createBubble(i);
@@ -44,12 +58,12 @@ export default function BubbleAnimation() {
     setBubbles(initialBubbles);
 
     // Animation frame handling with timestamp for smoother animation
-    let animationFrameId;
-    let lastTimestamp = 0;
+    let animationFrameId: number;
+    let lastTimestamp: number = 0;
 
-    const animate = (timestamp) => {
+    const animate = (timestamp: number): void => {
       // Calculate time elapsed
-      const elapsed = timestamp - lastTimestamp;
+      const elapsed: number = timestamp - lastTimestamp;
 
       // Only update if enough time has passed (for consistent speed)
       if (elapsed > 16) {
@@ -59,7 +73,7 @@ export default function BubbleAnimation() {
         setBubbles((prevBubbles) =>
           prevBubbles.map((bubble) => {
             // Move bubble up with constant speed
-            const newY = bubble.y - (bubble.speed * elapsed) / 50;
+            const newY: number = bubble.y - (bubble.speed * elapsed) / 50;
 
             // If bubble goes off top, reset to below viewport
             if (newY < -10) {
@@ -67,8 +81,8 @@ export default function BubbleAnimation() {
             }
 
             // Add slight horizontal wobble
-            const newWobble = bubble.wobble + bubble.wobbleSpeed;
-            const newX = bubble.x + Math.sin(newWobble) * 0.05;
+            const newWobble: number = bubble.wobble + bubble.wobbleSpeed;
+            const newX: number = bubble.x + Math.sin(newWobble) * 0.05;
 
             return {
               ...bubble,
