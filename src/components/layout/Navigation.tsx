@@ -10,7 +10,7 @@ const Navigation: React.FC = () => {
     { name: 'About', path: '/about' },
     { name: 'Homes', path: '/property-service' },
     { name: 'Yachts', path: '/yacht-service' },
-    { name: 'Garments', path: '/apparel-service' },
+    { name: 'Apparel', path: '/apparel-service' },
     { name: 'Contact', path: '/contact' }
   ];
 
