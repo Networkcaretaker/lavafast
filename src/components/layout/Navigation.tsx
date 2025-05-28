@@ -23,13 +23,17 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white/10 backdrop-blur-sm rounded-lg  sticky top-0 z-50">
+    <nav className="bg-white/80 backdrop-blur-sm rounded-lg sticky top-8 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold text-blue-600">
-              LAVAFAST
+              <img 
+                src="/text_logo.svg" 
+                alt="LAVAFAST Logo" 
+                className="object-contain mx-auto max-w-44"
+              />
             </Link>
           </div>
 
