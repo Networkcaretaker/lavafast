@@ -9,7 +9,7 @@ const Navigation: React.FC = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Villa Service', path: '/villa-service' },
+    { name: 'Property Service', path: '/property-service' },
     { name: 'Yacht Service', path: '/yacht-service' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
               <img 
                 src="/text_logo.svg" 
                 alt="LAVAFAST Logo" 
-                className="object-contain mx-auto max-w-44"
+                className="object-contain mx-auto max-w-44 md:max-w-32"
               />
             </Link>
           </div>

@@ -7,7 +7,7 @@ import BubbleAnimation from './components/animation/Bubbles';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import VillaService from './pages/VillaService';
+import PropertyService from './pages/PropertyService';
 import YachtService from './pages/YachtService';
 import './App.css';
 
@@ -29,7 +29,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/villa-service" element={<VillaService />} />
+              <Route path="/property-service" element={<PropertyService />} />
               <Route path="/yacht-service" element={<YachtService />} />
               <Route path="/contact" element={<Contact />} />
               {/* 404 Route */}

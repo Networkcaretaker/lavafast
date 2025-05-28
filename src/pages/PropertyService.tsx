@@ -1,7 +1,7 @@
-// VillaService.tsx
+// PropertyService.tsx
 import React from 'react';
 
-const VillaService: React.FC = () => {
+const PropertyService: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="max-w-6xl mx-auto">
@@ -67,4 +67,4 @@ const VillaService: React.FC = () => {
   );
 };
 
-export default VillaService;
+export default PropertyService;
