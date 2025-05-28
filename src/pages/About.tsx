@@ -12,14 +12,10 @@ const About: React.FC = () => {
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">Our Story</h2>
           <p className="text-white/90 mb-6 leading-relaxed">
-            LAVAFAST was founded with a vision to provide unparalleled luxury services 
-            in villa rentals and yacht charters. We believe in creating extraordinary 
-            experiences that exceed expectations.
+            Lavafast is an established laundry service of choice for elite luxury yachts and villas in the southwest of Mallorca, including Palma. We guarantee high quality service at competitive rates. Whilst our normal services are rendered at a superior level, we are also happy to discuss any specific requests and requirements with discerning customers. We take pride in our laundry service and provide a fast, friendly and approachable service to all our customers.
           </p>
           <p className="text-white/90 leading-relaxed">
-            With years of experience in the luxury hospitality industry, our team 
-            is dedicated to delivering exceptional service and unforgettable moments 
-            for our distinguished clientele.
+            Operating from Santa Ponsa for over 25 years, we are recognised for providing an excellent service to all of our customers which include:
           </p>
         </div>
 
