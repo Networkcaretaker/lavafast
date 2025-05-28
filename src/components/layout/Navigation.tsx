@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
               <img 
                 src="/text_logo.svg" 
                 alt="LAVAFAST Logo" 
-                className="object-contain mx-auto max-w-44 md:max-w-32"
+                className="object-contain mx-auto max-w-32 md:max-w-44"
               />
             </Link>
           </div>
