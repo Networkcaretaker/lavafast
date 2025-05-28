@@ -1,6 +1,7 @@
 // Footer.tsx
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import WhatsApp from '../contact/Whatsapp';
 
 const Footer: React.FC = () => {
   return (
@@ -8,11 +9,17 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">LAVAFAST</h3>
+            <div className="flex-shrink-0">
+              <img 
+                src="/text_logo.svg" 
+                alt="LAVAFAST Logo" 
+                className="object-contain mx-auto max-w-32 md:max-w-44 pb-6"
+              />
+            </div>
             <p className="text-white/80">
               Professional Laundry services for your finest apparel, luxury properties and exquisite yachts.
             </p>
-            <h3 className="text-sm font-bold mb-4 mt-4">FOLLOW US</h3>
+            <h3 className="text-sm font-bold mb-4 mt-6">FOLLOW US</h3>
             <div className="flex justify-center gap-4">
               <a href="#" className="text-gray-600 hover:text-blue-600">
                 <Facebook size={24} />
@@ -29,20 +36,28 @@ const Footer: React.FC = () => {
             </div>
             </div>
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4">SERVICES</h4>
             <ul className="space-y-2 text-white/80">
               <li>Homes</li>
               <li>Yachts</li>
-              <li>Garments</li>
+              <li>Apparel</li>
+              <li>Delivery</li>
               <li>Events</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4">CONTACT</h4>
             <div className="space-y-2 text-white/80">
               <p>📧 info@lavafast.com</p>
               <p>📞 +34 646 39 67 35</p>
               <p>📍 Gran Via Puig de Galatzó 14 E, 07180, Santa Ponsa, Mallorca</p>
+              <WhatsApp
+                phoneNumber="+34646396735"
+                message="Hello! I'm interested in your laundry services."
+                size="sm"
+              >
+                Contact us on WhatsApp
+              </WhatsApp>
             </div>
           </div>
         </div>

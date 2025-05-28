@@ -9,6 +9,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import PropertyService from './pages/PropertyService';
 import YachtService from './pages/YachtService';
+import ApparelService from './pages/ApparelService';
 import './App.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/property-service" element={<PropertyService />} />
               <Route path="/yacht-service" element={<YachtService />} />
+              <Route path="/apparel-service" element={<ApparelService />} />
               <Route path="/contact" element={<Contact />} />
               {/* 404 Route */}
               <Route path="*" element={
