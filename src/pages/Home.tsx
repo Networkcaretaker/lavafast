@@ -1,25 +1,31 @@
 // Home.tsx
 import React from 'react';
+import WhatsApp from '../components/contact/Whatsapp';
 
 const Home: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div className="container mx-auto px-6">
       {/* Hero Section with Logo */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-2">
         <img 
-          src="/logo.png" 
+          src="/logo.svg" 
           alt="LAVAFAST Logo" 
-          className="object-contain mx-auto mb-8 max-w-md"
+          className="object-contain mx-auto max-w-md"
         />
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          Welcome to LAVAFAST
+        <h1 className="text-3xl md:text-3xl font-thin text-white mb-2">
+          YOUR LUXURY LAUNDRY SERVICE
         </h1>
-        <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Premium villa and yacht services for the ultimate luxury experience
-        </p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
-          Explore Our Services
-        </button>
+        <h1 className="text-3xl md:text-3xl font-thin text-emerald-300 mb-10">
+          IN MALLORCA
+        </h1>
+        <div className="space-y-2 mb-12">
+          <WhatsApp
+            phoneNumber="+34646396735"
+            message="Hello! I'm interested in your laundry services."
+          >
+            Contact us on WhatsApp
+          </WhatsApp>
+        </div>
       </div>
 
       {/* Services Preview */}
