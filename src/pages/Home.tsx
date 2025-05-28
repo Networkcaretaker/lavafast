@@ -10,9 +10,9 @@ const Home: React.FC = () => {
         <img 
           src="/logo.svg" 
           alt="LAVAFAST Logo" 
-          className="object-contain mx-auto max-w-md md:max-w-sm"
+          className="object-contain mx-auto max-w-sm md:max-w-md"
         />
-        <h1 className="text-3xl md:text-3xl font-thin text-white mb-2">
+        <h1 className="text-3xl md:text-3xl font-thin text-white">
           YOUR LUXURY LAUNDRY SERVICE
         </h1>
         <h1 className="text-3xl md:text-3xl font-thin text-emerald-300 mb-10">
