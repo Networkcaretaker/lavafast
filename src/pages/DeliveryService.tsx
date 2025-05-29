@@ -1,13 +1,14 @@
 // DeliveryService.tsx
 import React from 'react';
 // import WhatsApp from '../components/contact/Whatsapp';
-import InteractiveMap from '../components/interactive/InteractiveMap';
+import DeliveryServiceMap from '../components/interactive/LocationMap';
+import PortCollectionMap from '../components/interactive/PortsMap';
 
 const DeliveryService: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 pb-12">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
+    <div className="container mx-auto px-2 pb-2">
+      <div className="max-w-6xl mx-auto">
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-4">
           <h2 className="text-2xl font-bold text-white mb-4">FREE Collection & Delivery Service</h2>
           <p className="text-white/90 leading-relaxed">
             Lavafast Laundry Service provides a free daily laundry delivery and collection service
@@ -17,8 +18,13 @@ const DeliveryService: React.FC = () => {
           </p>
         </div>
 
+        <div className="mb-2">
+          <h2 className="text-2xl font-bold text-white mb-4">Mallorca Collection Points</h2>
+          <DeliveryServiceMap />
+        </div>
         <div className="mb-8">
-            <InteractiveMap />
+          <h2 className="text-2xl font-bold text-white mb-4">Palma Collection Points</h2>
+          <PortCollectionMap />
         </div>
 
       </div>

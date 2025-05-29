@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             </p>
             <h3 className="text-sm font-bold mb-4 mt-6">FOLLOW US</h3>
             <div className="flex justify-center gap-4">
-              <a href="#" className="text-emerald-300 hover:text-blue-600">
+              <a href="https://www.facebook.com/LavafastWash" target="_blank" className="text-emerald-300 hover:text-blue-600">
                 <Facebook size={24} />
               </a>
               <a href="#" className="text-emerald-300 hover:text-pink-600">
