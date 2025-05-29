@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/layout/Navigation';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import ScrollToTop from './components/layout/ScrollToTop';
 import BubbleAnimation from './components/animation/Bubbles';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,6 +11,7 @@ import Contact from './pages/Contact';
 import PropertyService from './pages/PropertyService';
 import YachtService from './pages/YachtService';
 import ApparelService from './pages/ApparelService';
+import DeliveryService from './pages/DeliveryService';
 import './App.css';
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
         
         {/* Main app content with routing */}
         <div className="relative z-10 min-h-screen flex flex-col">
+          <ScrollToTop />
           <Navigation />
           <Header />
           
@@ -33,6 +36,7 @@ function App() {
               <Route path="/property-service" element={<PropertyService />} />
               <Route path="/yacht-service" element={<YachtService />} />
               <Route path="/apparel-service" element={<ApparelService />} />
+              <Route path="/delivery-service" element={<DeliveryService />} />
               <Route path="/contact" element={<Contact />} />
               {/* 404 Route */}
               <Route path="*" element={

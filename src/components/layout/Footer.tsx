@@ -1,5 +1,6 @@
 // Footer.tsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import WhatsApp from '../contact/Whatsapp';
 
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex-shrink-0">
               <img 
-                src="/text_logo.svg" 
+                src="/text_logo_white.svg" 
                 alt="LAVAFAST Logo" 
                 className="object-contain mx-auto max-w-32 md:max-w-44 pb-6"
               />
@@ -21,16 +22,16 @@ const Footer: React.FC = () => {
             </p>
             <h3 className="text-sm font-bold mb-4 mt-6">FOLLOW US</h3>
             <div className="flex justify-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
+              <a href="#" className="text-emerald-300 hover:text-blue-600">
                 <Facebook size={24} />
               </a>
-              <a href="#" className="text-gray-600 hover:text-pink-600">
+              <a href="#" className="text-emerald-300 hover:text-pink-600">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-700">
+              <a href="#" className="text-emerald-300 hover:text-blue-700">
                 <Linkedin size={24} />
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-400">
+              <a href="#" className="text-emerald-300 hover:text-blue-400">
                 <Twitter size={24} />
               </a>
             </div>
@@ -38,26 +39,34 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-semibold mb-4">SERVICES</h4>
             <ul className="space-y-2 text-white/80">
-              <li>Homes</li>
-              <li>Yachts</li>
-              <li>Apparel</li>
-              <li>Delivery</li>
-              <li>Events</li>
+              <li>
+                <Link to="/property-service" className=" text-white/80 hover:text-emerald-300/80">
+                  Homes
+                </Link>
+              </li>
+              <li><Link to="/yacht-service" className=" text-white/80 hover:text-emerald-300/80">Yachts</Link></li>
+              <li><Link to="/apparel-service" className=" text-white/80 hover:text-emerald-300/80">Apparel</Link></li>
+              <li><Link to="/delivery-service" className=" text-white/80 hover:text-emerald-300/80">Delivery</Link></li>
+              <li><Link to="/events" className=" text-white/80 hover:text-emerald-300/80">Events</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold mb-4">CONTACT</h4>
             <div className="space-y-2 text-white/80">
-              <p>📧 info@lavafast.com</p>
+              <p>📧 <a href="mailto:info@lavafast.com" target="_blank">info@lavafast.com</a></p>
               <p>📞 +34 646 39 67 35</p>
               <p>📍 Gran Via Puig de Galatzó 14 E, 07180, Santa Ponsa, Mallorca</p>
-              <WhatsApp
-                phoneNumber="+34646396735"
-                message="Hello! I'm interested in your laundry services."
-                size="sm"
-              >
-                Contact us on WhatsApp
-              </WhatsApp>
+              <div className="my-4">
+                <WhatsApp
+                  phoneNumber="+34646396735"
+                  message="Hello! I'm interested in your laundry services."
+                  size="sm"
+                  className="my-2"
+                >
+                  Contact us on WhatsApp
+                </WhatsApp>
+              </div>
+              
             </div>
           </div>
         </div>

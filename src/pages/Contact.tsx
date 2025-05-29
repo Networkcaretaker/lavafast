@@ -1,5 +1,6 @@
 // Contact.tsx
 import React, { useState } from 'react';
+import WhatsApp from '../components/contact/Whatsapp';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -22,17 +23,13 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-          Contact Us
-        </h1>
-        
+    <div className="container mx-auto px-6 pb-12">
+      <div className="max-w-4xl mx-auto"> 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-white mb-6">Get In Touch</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <h2 className="text-xl font-bold text-white mb-6">Get In Touch</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-white mb-2" htmlFor="name">Name</label>
                 <input
@@ -86,9 +83,19 @@ const Contact: React.FC = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <h3 className="text-xl font-bold text-white mb-4">Contact Information</h3>
               <div className="space-y-3 text-white/90">
-                <p>📧 info@lavafast.com</p>
-                <p>📞 +1 (555) 123-4567</p>
-                <p>📍 123 Luxury Avenue, Paradise City</p>
+                <p>📧 <a href="mailto:info@lavafast.com" target="_blank">info@lavafast.com</a></p>
+                <p>📞 +34 646 39 67 35</p>
+                <p>📍 Gran Via Puig de Galatzó 14 E, 07180, Santa Ponsa, Mallorca</p>
+                <div className="my-4">
+                  <WhatsApp
+                    phoneNumber="+34646396735"
+                    message="Hello! I'm interested in your laundry services."
+                    size="sm"
+                    className="my-2"
+                  >
+                    Contact us on WhatsApp
+                  </WhatsApp>
+                </div>
               </div>
             </div>
             
@@ -98,6 +105,9 @@ const Contact: React.FC = () => {
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 4:00 PM</p>
                 <p>Sunday: Closed</p>
+              </div>
+              <div className="py-4 text-emerald-300/90">
+                <p>Out of hours service available on request</p>
               </div>
             </div>
           </div>
