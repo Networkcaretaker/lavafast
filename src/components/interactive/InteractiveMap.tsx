@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin } from 'lucide-react';
+import WhatsApp from '../contact/Whatsapp';
 
 interface Location {
   id: string;
@@ -27,7 +28,6 @@ const InteractiveMap: React.FC<InteractiveMapProps> = ({
     <div className={`grid md:grid-cols-2 gap-4 ${className}`}>
       {/* Location List */}
       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-        <h3 className="text-xl font-bold text-white mb-4">Delivery Locations</h3>
         <div className="space-y-2">
           {locations.map((location) => (
             <button
@@ -40,7 +40,7 @@ const InteractiveMap: React.FC<InteractiveMapProps> = ({
               }`}
             >
               <MapPin 
-                size={6} 
+                size={10} 
                 className={selectedLocation === location.id ? 'text-blue-400' : 'text-white/60'} 
               />
               {location.name}
@@ -60,8 +60,7 @@ const InteractiveMap: React.FC<InteractiveMapProps> = ({
 
       {/* Interactive Map */}
       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-        <h3 className="text-xl font-bold text-white mb-4">Map</h3>
-        <div className="relative w-full aspect-video bg-gray-800 rounded-lg overflow-hidden">
+        <div className="relative w-full bg-gray-800 rounded-lg overflow-hidden">
           <img
             src={mapImageUrl}
             alt={mapAlt}
@@ -83,11 +82,11 @@ const InteractiveMap: React.FC<InteractiveMapProps> = ({
             >
               <div className={`relative ${selectedLocation === location.id ? 'animate-bounce' : ''}`}>
                 <MapPin
-                  size={12}
+                  size={16}
                   className={`drop-shadow-lg ${
                     selectedLocation === location.id
-                      ? 'text-blue-400 fill-blue-400 z-50'
-                      : 'text-red-500 fill-red-500/30 hover:text-red-400 hover:fill-red-400 z-10'
+                      ? 'text-blue-400 fill-blue-400'
+                      : 'text-red-500 fill-red-500 hover:text-red-400 hover:fill-red-400'
                   }`}
                 />
                 {selectedLocation === location.id && (
@@ -99,39 +98,23 @@ const InteractiveMap: React.FC<InteractiveMapProps> = ({
             </button>
           ))}
         </div>
+        {locations.map((location) => (
+          <div>
+            {selectedLocation === location.id && (
+              <div className="space-y-2 mt-4">
+                <WhatsApp
+                  phoneNumber="+34646396735"
+                  message={`Hello! I would like to arrange a collection from ${location.name}`}
+                >
+                  Arrange a collection from {location.name}
+                </WhatsApp>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-// Example usage component
-const DeliveryServiceMap: React.FC = () => {
-  // Sample locations - you'll need to adjust these coordinates based on your actual map
-  const deliveryLocations: Location[] = [
-    { id: 'stp', name: 'STP Shipyard Palma', x: 61, y: 58 },
-    { id: 'moll-vell', name: 'Moll Vell Marina', x: 63, y: 56 },
-    { id: 'la-lonja', name: 'La Lonja Marina', x: 63, y: 55 },
-    { id: 'rcn-palma', name: 'Real Club Nautico Palma', x: 62, y: 54 },
-    { id: 'marina-port', name: 'Marina Port de Mallorca', x: 46, y: 58 },
-    { id: 'club-de-mar', name: 'Club de Mar Palma', x: 44, y: 64 },
-    { id: 'puerto-portals', name: 'Puerto Portals', x: 35, y: 70 },
-    { id: 'portals-nous', name: 'Portals Nous', x: 32, y: 68 },
-    { id: 'port-adriano', name: 'Port Adriano', x: 28, y: 72 },
-    { id: 'santa-ponsa', name: 'Santa Ponsa', x: 25, y: 75 },
-    { id: 'andratx', name: 'Andratx', x: 15, y: 80 },
-  ];
-
-  return (
-    <div className="container mx-auto pb-12">
-      <div className="max-w-4xl mx-auto">
-        <InteractiveMap
-          locations={deliveryLocations}
-          mapImageUrl="/mallorca.png"
-          mapAlt="Mallorca Delivery Locations Map"
-        />
-      </div>
-    </div>
-  );
-};
-
-export default DeliveryServiceMap;
+export default InteractiveMap;
