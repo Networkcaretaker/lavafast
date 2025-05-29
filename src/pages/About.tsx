@@ -3,11 +3,8 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div className="container mx-auto px-6 pb-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
-          About LAVAFAST
-        </h1>
         
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">Our Story</h2>
