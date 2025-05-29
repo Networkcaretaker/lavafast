@@ -3,10 +3,10 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 pb-12">
+    <div className="container mx-auto px-2 pb-12">
       <div className="max-w-6xl mx-auto">
         
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">Our Story</h2>
           <p className="text-white/90 mb-6 leading-relaxed">
             Lavafast is an established laundry service of choice for elite luxury yachts and villas in the southwest of Mallorca, including Palma. We guarantee high quality service at competitive rates. Whilst our normal services are rendered at a superior level, we are also happy to discuss any specific requests and requirements with discerning customers. We take pride in our laundry service and provide a fast, friendly and approachable service to all our customers.

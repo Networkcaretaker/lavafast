@@ -11,7 +11,7 @@ const Navigation: React.FC = () => {
     { name: 'Homes', path: '/property-service' },
     { name: 'Yachts', path: '/yacht-service' },
     { name: 'Apparel', path: '/apparel-service' },
-    { name: 'Delivery', path: '/delivery-service' },
+    { name: 'Collections', path: '/delivery-service' },
     { name: 'Contact', path: '/contact' }
   ];
 

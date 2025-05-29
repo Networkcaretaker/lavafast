@@ -3,10 +3,10 @@ import React from 'react';
 
 const PropertyService: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 pb-12">
+    <div className="container mx-auto px-2 pb-12">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <h1 className="text-2xl md:text-2xl font-bold text-white mb-8 text-center">
             Villa Services
           </h1>
           <p className="text-white/80 mb-6">

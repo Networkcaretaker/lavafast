@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pb-12">
+    <div className="container mx-auto px-2 pb-12">
       <div className="max-w-6xl mx-auto"> 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}

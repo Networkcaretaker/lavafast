@@ -3,10 +3,10 @@ import React from 'react';
 
 const ApparelService: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 pb-12">
-      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
+    <div className="container mx-auto px-2 pb-12">
+      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
+          <h1 className="text-2xl md:text-2xl font-bold text-white mb-8 text-center">
             Apparel Services
           </h1>
           <p className="text-white/80 mb-6">
