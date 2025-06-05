@@ -1,10 +1,12 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/layout/Navigation';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
 import BubbleAnimation from './components/animation/Bubbles';
+import CookieBanner from './components/CookieBanner';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -12,9 +14,26 @@ import PropertyService from './pages/PropertyService';
 import YachtService from './pages/YachtService';
 import ApparelService from './pages/ApparelService';
 import DeliveryService from './pages/DeliveryService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import { CookieManager } from './utils/cookieManager';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Initialize tracking based on cookie preferences
+    const preferences = CookieManager.getPreferences();
+    if (preferences) {
+      if (preferences.analytics) {
+        CookieManager.initializeGoogleAnalytics();
+      }
+      if (preferences.marketing) {
+        CookieManager.initializeMarketingTools();
+      }
+      // Clean up cookies for disabled categories
+      CookieManager.clearNonEssentialCookies();
+    }
+  }, []);
+
   return (
     <Router>
       <div className="relative w-full min-h-screen">
@@ -38,6 +57,7 @@ function App() {
               <Route path="/apparel-service" element={<ApparelService />} />
               <Route path="/delivery-service" element={<DeliveryService />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               {/* 404 Route */}
               <Route path="*" element={
                 <div className="flex items-center justify-center min-h-96">
@@ -55,6 +75,9 @@ function App() {
           
           <Footer />
         </div>
+        
+        {/* Cookie Banner - appears on top of everything */}
+        <CookieBanner />
       </div>
     </Router>
   );
