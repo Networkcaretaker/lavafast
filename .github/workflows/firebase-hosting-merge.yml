@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting
+name: Deploy to Firebase Hosting and Functions
 
 on:
   push:
@@ -16,11 +16,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20'  # Changed to Node 18 for Firebase Functions compatibility
           cache: 'npm'
       
-      - name: Install dependencies
+      # Install frontend dependencies
+      - name: Install frontend dependencies
         run: npm ci
+      
+      # Install functions dependencies
+      - name: Install functions dependencies
+        run: |
+          cd functions
+          npm ci
+      
+      # Build functions (TypeScript compilation)
+      - name: Build functions
+        run: |
+          cd functions
+          npm run build
       
       - name: Set Development Environment
         if: github.ref == 'refs/heads/dev'
@@ -34,7 +47,8 @@ jobs:
           echo "VITE_ENV=production" >> $GITHUB_ENV
           echo "Building for production environment"
       
-      - name: Build project
+      # Build frontend
+      - name: Build frontend
         run: npm run build
       
       - name: Deploy to Production (Live Channel)
