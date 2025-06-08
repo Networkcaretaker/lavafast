@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: 'About', path: '/about' },
+    { name: 'About', path: '/' },
     { name: 'Homes', path: '/property-service' },
     { name: 'Yachts', path: '/yacht-service' },
     { name: 'Apparel', path: '/apparel-service' },
