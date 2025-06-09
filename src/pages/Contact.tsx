@@ -78,7 +78,8 @@ const Contact: React.FC = () => {
     try {
       // Call the Firebase function
       const response = await fetch(
-        'https://europe-west1-lavafast-laundry-service.cloudfunctions.net/sendContactEmail',
+         // 'https://europe-west1-lavafast-laundry-service.cloudfunctions.net/sendContactEmail',
+        'http://localhost:5001/lavafast-laundry-service/europe-west1/sendContactEmail',
         {
           method: 'POST',
           headers: {
