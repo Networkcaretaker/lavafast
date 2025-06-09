@@ -15,9 +15,14 @@ const YachtService: React.FC = () => {
             We are a Captain's Recommended Service (since 2015) and are listed in the Superyacht Services Guide.<br/><br/>
             We will help you as much as we possibly can. Our services include:<br/>
           </p>
-          <li>Daily Collection and Delivery Service to all ports and marinas situated between Palma and Andratx</li>
-          <li>Delivery and Collection to other ports by arrangement</li>
-          <li>Overnight service by arrangement</li>
+          <p>
+            🛥️ Daily Port Service - Palma to Andratx coverage
+            ⚡ Express Overnight - Rush processing available
+            🧵 Hand-Finished Care - Premium attention to detail
+            🏆 Captain's Recommended - Since 2015
+            📋 Superyacht Guide Listed - Industry recognized
+            🗺️ Extended Coverage - By arrangement
+          </p>
         </div>
       </div>
     </div>
