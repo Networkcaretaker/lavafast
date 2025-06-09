@@ -67,7 +67,7 @@ export const sendContactEmail = onRequest(
 
         await transporter.sendMail({
           from: `"Lavafast Website" <${gmailUser}>`,
-          to: "info@lavafast.es",
+          to: "networkcaretaker@gmail.com", // networkcaretaker@gmail.com, info@lavafast.es
           replyTo: email,
           subject: `New message from ${name}`,
           text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
