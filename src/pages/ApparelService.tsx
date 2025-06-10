@@ -1,5 +1,6 @@
 // ApparelService.tsx
 import React from 'react';
+import WhatsApp from '../components/contact/Whatsapp';
 
 const ApparelService: React.FC = () => {
   return (
@@ -15,6 +16,14 @@ const ApparelService: React.FC = () => {
               Our comprehensive clothing care combines advanced cleaning technologies with artisanal expertise, ensuring your most treasured garments receive the exceptional treatment they deserve.<br/><br/>
               Transform your clothing with our premium cleaning services that remove stubborn stains, refresh fabrics, and restore garments to their original splendor with professional precision and care.
           </p>
+          <WhatsApp
+            phoneNumber="+34646396735"
+            message="Hello! I'm interested in your laundry services."
+            size="sm"
+            className="my-2"
+          >
+            Schedule Wardrobe Consultation
+          </WhatsApp>
         </div>
       </div>
     </div>

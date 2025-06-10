@@ -1,5 +1,6 @@
 // YachtService.tsx
 import React from 'react';
+import WhatsApp from '../components/contact/Whatsapp';
 
 const YachtService: React.FC = () => {
   return (
@@ -15,13 +16,35 @@ const YachtService: React.FC = () => {
             We are a Captain's Recommended Service (since 2015) and are listed in the Superyacht Services Guide.<br/><br/>
             We will help you as much as we possibly can. Our services include:<br/>
           </p>
-          <p>
+          <p className="text-white/80 mb-6">
             🛥️ Daily Port Service - Palma to Andratx coverage
             ⚡ Express Overnight - Rush processing available
             🧵 Hand-Finished Care - Premium attention to detail
             🏆 Captain's Recommended - Since 2015
             📋 Superyacht Guide Listed - Industry recognized
             🗺️ Extended Coverage - By arrangement
+          </p>
+          <WhatsApp
+            phoneNumber="+34646396735"
+            message="Hello! I'm interested in your laundry services."
+            size="sm"
+            className="my-2"
+          >
+            Get A Quote for Your Yacht Today
+          </WhatsApp>
+          <h2 className="text-white/80">"How We Serve Your Yacht"</h2>
+          <h4 className="text-white/80">Interactive 5-Step Timeline</h4>
+          <p className="text-white/80 mb-6">
+            <b>1. Collection 📦</b><br/>
+            Daily pickup from your berth across SW Mallorca ports<br/>
+            <b>2. Inspection 🔍</b><br/>
+            Pre-treatment stain analysis with premium products<br/>
+            <b>3. Premium Care 🌊</b><br/>
+            Specialized yacht linen processing with fiber-safe methods<br/>
+            <b>4. Hand Finishing ✋</b><br/>
+            Crisp ironing, flat-packed pillowcases, no-fold-crease guarantee<br/>
+            <b>5. Delivery 🚚</b><br/>
+            Returned pristine and charter-ready to your specifications<br/>
           </p>
         </div>
       </div>
