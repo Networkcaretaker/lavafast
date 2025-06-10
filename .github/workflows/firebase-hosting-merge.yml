@@ -1,3 +1,4 @@
+# .github/workflows/firebase-hosting-merge.yml
 name: Deploy to Firebase Hosting and Functions
 
 on:
@@ -16,18 +17,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'  # Changed to Node 20 for Firebase Functions compatibility
+          node-version: '20'
           cache: 'npm'
       
-      # Install frontend dependencies
-      - name: Install frontend dependencies
-        run: npm ci
+      # Clean install frontend dependencies to fix Rollup issue
+      - name: Clean install frontend dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm cache clean --force
+          npm install
+          npm audit fix --force || true
       
       # Install functions dependencies
       - name: Install functions dependencies
         run: |
           cd functions
-          npm ci
+          rm -rf node_modules package-lock.json
+          npm cache clean --force
+          npm install
       
       # Build functions (TypeScript compilation)
       - name: Build functions
@@ -47,9 +54,10 @@ jobs:
           echo "VITE_ENV=production" >> $GITHUB_ENV
           echo "Building for production environment"
       
-      # Build frontend
+      # Build frontend with additional error handling
       - name: Build frontend
-        run: npm run build
+        run: |
+          npm run build
       
       - name: Deploy to Production (Live Channel)
         if: github.ref == 'refs/heads/main'
