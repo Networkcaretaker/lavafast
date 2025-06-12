@@ -1,7 +1,7 @@
 // src/pages/Contact.tsx
 import React from 'react';
 import WhatsApp from '../components/contact/Whatsapp';
-import ContactForm from '../components/contact/ContactForm';
+// import ContactForm from '../components/contact/ContactForm';
 
 const Contact: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto"> 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <ContactForm />
+          {/* <ContactForm />*/}
 
           {/* Contact Information */}
           <div className="space-y-12">
