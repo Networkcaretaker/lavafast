@@ -1,6 +1,5 @@
 // src/components/services/ServiceHero.tsx
 import React from 'react';
-import { Award, Users, Calendar } from 'lucide-react';
 import WhatsApp from '../contact/Whatsapp';
 
 interface ServiceHeroProps {
@@ -22,13 +21,18 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   stats,
   ctaText,
   ctaSecondary,
-  backgroundImage = '/yacht-interior.jpg'
+  backgroundImage = '/yacht-services-hero.jpg'
 }) => {
   return (
-    <div className="relative min-h-96 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 rounded-lg overflow-hidden mb-8">
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
-      
+    <div 
+      className="relative min-h-96 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 rounded-lg overflow-hidden mb-8"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       {/* Content */}
       <div className="relative z-10 p-8 text-center">
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
