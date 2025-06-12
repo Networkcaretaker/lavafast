@@ -26,13 +26,10 @@ const Footer: React.FC = () => {
                 <Facebook size={24} />
               </a>
               <a href="#" className="text-emerald-300 hover:text-pink-600">
-                <Instagram size={24} />
+                {/*<Instagram size={24} />*/}
               </a>
-              <a href="#" className="text-emerald-300 hover:text-blue-700">
+              <a href="https://www.linkedin.com/company/lavafast" className="text-emerald-300 hover:text-blue-700">
                 <Linkedin size={24} />
-              </a>
-              <a href="#" className="text-emerald-300 hover:text-blue-400">
-                <Twitter size={24} />
               </a>
             </div>
             </div>
